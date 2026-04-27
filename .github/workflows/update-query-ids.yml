@@ -1,0 +1,66 @@
+name: Update Query IDs
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-query-ids
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout test
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: test
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Update query IDs
+        run: npm run update-query-ids
+
+      - name: Detect changes
+        id: detect_changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changed files:"
+            git diff --name-only
+          fi
+
+      - name: Create or update PR from test to main
+        if: steps.detect_changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ github.token }}
+          branch: test
+          base: main
+          commit-message: "chore: update query ids"
+          title: "chore: update query ids"
+          body: |
+            Automatically update X Query IDs.
+
+            - Source: `Update Query IDs` workflow
+            - Target file: `query_ids.json`
+          delete-branch: false

@@ -1,0 +1,12 @@
+{
+  "name": "xapi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "X API docs and tests.",
+  "scripts": {
+    "update-query-ids": "node scripts/update_query_ids.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.59.1"
+  }
+}

@@ -3,3 +3,7 @@ __pycache__/
 .env
 *.log
 responses/
+node_modules/
+dist/
+.vscode/
+.idea/
