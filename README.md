@@ -11,22 +11,25 @@ X API 文档和测试仓库。
 
 ## 当前支持接口
 
-- `account`: 当前账号信息
-- `timeline`: Home 推荐时间线、下一页、刷新
-- `latest`: Home 最新时间线、下一页
-- `tweet`: 推文详情
-- `search`: 搜索时间线
-- `user`: 根据 screen name 获取用户信息
-- `user-tweets`: 获取用户推文列表
-- `following`: 获取关注列表
-- `create-tweet`: 发推或回复
-- `repost`: 引用转发
-- `favorite`: 点赞
-- `unfavorite`: 取消点赞
-- `follow`: 关注用户
-- `unfollow`: 取消关注用户
-- `translate`: 翻译推文
-- `upload-media`: 上传媒体
+- [account 当前账号信息](docs/apis/account-verify-credentials.md)
+- [timeline Home 推荐时间线](docs/apis/get-home-timeline.md)
+- [timeline-next Home 推荐时间线下一页](docs/apis/get-home-timeline-next.md)
+- [timeline-refresh Home 推荐时间线刷新](docs/apis/get-home-timeline-refresh.md)
+- [latest Home 最新时间线](docs/apis/get-home-latest-timeline.md)
+- [latest-next Home 最新时间线下一页](docs/apis/get-home-latest-timeline-next.md)
+- [tweet 推文详情](docs/apis/get-tweet-detail.md)
+- [search 搜索时间线](docs/apis/search-timeline.md)
+- [user 根据 screen name 获取用户信息](docs/apis/user-by-screen-name.md)
+- [user-tweets 获取用户推文列表](docs/apis/user-tweets.md)
+- [following 获取关注列表](docs/apis/following.md)
+- [create-tweet 发推或回复](docs/apis/create-tweet.md)
+- [repost 引用转发](docs/apis/repost-tweet.md)
+- [favorite 点赞](docs/apis/favorite-tweet.md)
+- [unfavorite 取消点赞](docs/apis/unfavorite-tweet.md)
+- [follow 关注用户](docs/apis/follow-user.md)
+- [unfollow 取消关注用户](docs/apis/unfollow-user.md)
+- [translate 翻译推文](docs/apis/translate-post.md)
+- [upload-media 上传媒体](docs/apis/upload-media.md)
 
 ## 凭据
 
