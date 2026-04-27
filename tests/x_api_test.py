@@ -476,7 +476,7 @@ def require_execute(args: argparse.Namespace, preview: Any) -> bool:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Test TouchFish X APIs")
+    parser = argparse.ArgumentParser(description="Test X APIs")
     sub = parser.add_subparsers(dest="command", required=True)
 
     sub.add_parser("account")

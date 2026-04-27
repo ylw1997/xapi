@@ -6,7 +6,7 @@
 - GraphQL URL: `/i/api/graphql/{queryId}/{operationName}`
 - 大多数接口需要登录 Cookie、Bearer Authorization、`x-csrf-token`
 - `x-csrf-token` 通常等于 Cookie 中的 `ct0`
-- 返回外层通常为 X 原始 JSON。TouchFish 中统一包装为：
+- 返回外层通常为 X 原始 JSON。测试脚本会直接输出接口返回内容：
 
 ```json
 {

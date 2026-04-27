@@ -49,4 +49,4 @@
 }
 ```
 
-TouchFish 会返回 `response.data.data`。
+xapi 测试脚本会输出 X 原始响应。

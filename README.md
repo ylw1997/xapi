@@ -1,8 +1,8 @@
 # xapi
 
-TouchFish X 模块的 API 文档和测试仓库。
+X API 文档和测试仓库。
 
-这个仓库从 `src/api/x.ts` 整理出当前使用的 X 接口，包含：
+这个仓库整理当前使用的 X 接口，包含：
 
 - `docs/apis/*.md`: 每个 API 一份 Markdown 文档
 - `query_ids.json`: 当前 GraphQL Query ID
