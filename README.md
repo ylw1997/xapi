@@ -49,6 +49,19 @@ python tests/x_api_test.py create-tweet --text "hello from test" --execute
 python tests/x_api_test.py favorite --tweet-id 123 --execute
 ```
 
+## 每天自动更新 Query ID
+
+仓库内置 GitHub Actions：`.github/workflows/update-query-ids.yml`。
+
+它会每天自动访问 `x.com`，从前端模块中提取最新 GraphQL Query ID，并只更新 `query_ids.json` 中已经维护的接口。如果有变化，会自动创建 `chore/update-query-ids` 分支并向 `master` 提交 PR。
+
+也可以手动运行：
+
+```powershell
+npm install
+npm run update-query-ids
+```
+
 ## 文档索引
 
 见 [docs/README.md](docs/README.md)。
