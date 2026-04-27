@@ -17,11 +17,10 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout test
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: test
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -49,13 +48,13 @@ jobs:
             git diff --name-only
           fi
 
-      - name: Create or update PR from test to main
+      - name: Create or update PR
         if: steps.detect_changes.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ github.token }}
-          branch: test
-          base: main
+          branch: chore/update-query-ids
+          base: master
           commit-message: "chore: update query ids"
           title: "chore: update query ids"
           body: |
@@ -63,4 +62,4 @@ jobs:
 
             - Source: `Update Query IDs` workflow
             - Target file: `query_ids.json`
-          delete-branch: false
+          delete-branch: true
