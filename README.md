@@ -9,6 +9,25 @@ X API 文档和测试仓库。
 - `tests/x_api_test.py`: Python 测试客户端
 - `.github/workflows/check.yml`: 基础校验
 
+## 当前支持接口
+
+- `account`: 当前账号信息
+- `timeline`: Home 推荐时间线、下一页、刷新
+- `latest`: Home 最新时间线、下一页
+- `tweet`: 推文详情
+- `search`: 搜索时间线
+- `user`: 根据 screen name 获取用户信息
+- `user-tweets`: 获取用户推文列表
+- `following`: 获取关注列表
+- `create-tweet`: 发推或回复
+- `repost`: 引用转发
+- `favorite`: 点赞
+- `unfavorite`: 取消点赞
+- `follow`: 关注用户
+- `unfollow`: 取消关注用户
+- `translate`: 翻译推文
+- `upload-media`: 上传媒体
+
 ## 凭据
 
 不要把 Cookie、Authorization 写进仓库。测试脚本从环境变量读取：
